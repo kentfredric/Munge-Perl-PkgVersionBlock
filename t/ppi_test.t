@@ -6,8 +6,7 @@ use Test::More 0.90;
 use Path::Class qw( file dir );
 use FindBin;
 
-my (@files) = map { dir( $FindBin::Bin )->parent->subdir('corpus')->file( 'Sample_' . $_  . '.pm' ) }
-	qw( A B C D E F G H );
+my ( @files ) = map { dir( $FindBin::Bin )->parent->subdir( 'corpus' )->file( 'Sample_' . $_ . '.pm' ) } qw( A B C D E F G H );
 
 use Munge::Perl::PkgVersionBlock;
 
@@ -18,19 +17,18 @@ for my $file ( @files ) {
 	note "Opened $file happily";
 	subtest $file->basename => sub {
 
-		for my $package ( $document->packages ){ 
+		for my $package ( $document->packages ) {
 			if ( $package->is_block ) {
 				pass "Block";
 			}
 			else {
 				pass "Non-Block";
 			}
-			
+
 			note explain $package->_ppi_package->children;
 		}
-		
-		
-	}
+
+	  }
 
 }
 
