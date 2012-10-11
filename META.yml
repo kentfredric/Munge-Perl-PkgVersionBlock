@@ -5,7 +5,9 @@ author:
 build_requires:
   File::Find: 0
   File::Temp: 0
+  FindBin: 0
   Module::Build: 0.4002
+  Path::Class: 0
   Test::More: 0.98
 configure_requires:
   Module::Build: 0.4002
@@ -20,11 +22,18 @@ provides:
   Munge::Perl::PkgVersionBlock:
     file: lib/Munge/Perl/PkgVersionBlock.pm
     version: v0.1.0
+  Munge::Perl::PkgVersionBlock::Package:
+    file: lib/Munge/Perl/PkgVersionBlock/Package.pm
+    version: v0.1.0
 requires:
   Moo: 0
+  PPI: 0
   perl: v5.10.0
   strict: 0
   warnings: 0
+resources:
+  homepage: https://github.com/kentfredric/Munge-Perl-PkgVersionBlock
+  repository: https://github.com/kentfredric/Munge-Perl-PkgVersionBlock.git
 version: 0.1.0
 x_BuiltWith:
   modules:
@@ -32,8 +41,11 @@ x_BuiltWith:
     Dist::Zilla::PluginBundle::Author::KENTNL::Lite: 'NA(possibly not installed)'
     File::Find: 1.20
     File::Temp: 0.22
+    FindBin: 1.51
     Module::Build: 0.4002
     Moo: 1.000004
+    PPI: 1.215
+    Path::Class: 0.26
     Test::More: 0.98
     perl: 'NA(skipped: perl)'
     strict: 1.07

@@ -39,6 +39,7 @@
       "runtime" : {
          "requires" : {
             "Moo" : "0",
+            "PPI" : "0",
             "perl" : "v5.10.0",
             "strict" : "0",
             "warnings" : "0"
@@ -48,6 +49,8 @@
          "requires" : {
             "File::Find" : "0",
             "File::Temp" : "0",
+            "FindBin" : "0",
+            "Path::Class" : "0",
             "Test::More" : "0.98"
          }
       }
@@ -56,9 +59,21 @@
       "Munge::Perl::PkgVersionBlock" : {
          "file" : "lib/Munge/Perl/PkgVersionBlock.pm",
          "version" : "v0.1.0"
+      },
+      "Munge::Perl::PkgVersionBlock::Package" : {
+         "file" : "lib/Munge/Perl/PkgVersionBlock/Package.pm",
+         "version" : "v0.1.0"
       }
    },
    "release_status" : "stable",
+   "resources" : {
+      "homepage" : "https://github.com/kentfredric/Munge-Perl-PkgVersionBlock",
+      "repository" : {
+         "type" : "git",
+         "url" : "https://github.com/kentfredric/Munge-Perl-PkgVersionBlock.git",
+         "web" : "https://github.com/kentfredric/Munge-Perl-PkgVersionBlock"
+      }
+   },
    "version" : "0.1.0",
    "x_BuiltWith" : {
       "modules" : {
@@ -66,8 +81,11 @@
          "Dist::Zilla::PluginBundle::Author::KENTNL::Lite" : "NA(possibly not installed)",
          "File::Find" : "1.20",
          "File::Temp" : "0.22",
+         "FindBin" : "1.51",
          "Module::Build" : "0.4002",
          "Moo" : "1.000004",
+         "PPI" : "1.215",
+         "Path::Class" : "0.26",
          "Test::More" : "0.98",
          "perl" : "NA(skipped: perl)",
          "strict" : "1.07",
