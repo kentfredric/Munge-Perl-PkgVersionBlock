@@ -29,28 +29,35 @@ use Moo;
 
 	file('path/to/foo.pm')->splat( $document->serialize );
 
-=head1 FIRST PASS
-
-This is a first pass attempt at present. Basically scans for
-
-	qr{
-		^
-		\s*
-		package
-		\s+
-		$package_declaration_regex
-		\s+
-		$version_declaration_regex
-		\s+
-		\{
-	}msx
-
-And provides in-place removal/injection/replacement of the version part in that declaration.
-
-
-
-
 =cut
+
+use PPI;
+
+has _ppi_document => ( is => rwp =>, required => 1 );
+
+sub parse {
+	my ( $self, $content ) = @_;
+	my $doc;
+	if ( ref $content ) {
+		$doc = PPI::Document->new( $content );
+	}
+	else {
+		$doc = PPI::Document->new( \$content );
+	}
+	if ( not defined $doc ) {
+		die PPI::Document->errstr;
+	}
+	return $self->new( _ppi_document => $doc );
+
+}
+
+sub packages {
+	my ( $self, ) = @_;
+	return map {
+		require Munge::Perl::PkgVersionBlock::Package;
+		Munge::Perl::PkgVersionBlock::Package->new( _ppi_package => $_ )
+	} @{ $self->_ppi_document->find( 'PPI::Statement::Package' ) };
+}
 
 no Moo;
 
