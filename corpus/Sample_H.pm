@@ -1,0 +1,4 @@
+
+package Foo 1 {
+
+}

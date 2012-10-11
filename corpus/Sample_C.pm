@@ -1,3 +1,3 @@
 
-package Foo v1.1 {
+package Foo v1.1.1 {
 }

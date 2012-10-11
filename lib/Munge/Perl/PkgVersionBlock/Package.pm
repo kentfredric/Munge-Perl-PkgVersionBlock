@@ -47,10 +47,16 @@ sub _parts {
 			{ isa => 'PPI::Structure::Block' },
 		],
 	);
-	
+
 	for my $pattern_name ( keys %patterns ) {
 		my ( @pattern ) = @{ $patterns{$pattern_name} };
-		for my $i ( 0 .. 
+		for my $i ( 0 .. $#pattern ) {
+			my $want = $pattern[ $i ];
+			my $got  = $children[ $i ];
+			if ( defined $want->{isa} ) {
+
+			}
+		}
 	}
 }
 

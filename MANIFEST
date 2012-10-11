@@ -11,6 +11,9 @@ corpus/Sample_B.pm
 corpus/Sample_C.pm
 corpus/Sample_D.pm
 corpus/Sample_E.pm
+corpus/Sample_F.pm
+corpus/Sample_G.pm
+corpus/Sample_H.pm
 dist.ini
 lib/Munge/Perl/PkgVersionBlock.pm
 lib/Munge/Perl/PkgVersionBlock/Package.pm
