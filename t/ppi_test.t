@@ -7,7 +7,7 @@ use Path::Class qw( file dir );
 use FindBin;
 
 my (@files) = map { dir( $FindBin::Bin )->parent->subdir('corpus')->file( 'Sample_' . $_  . '.pm' ) }
-	qw( A B C D E );
+	qw( A B C D E F G H );
 
 use Munge::Perl::PkgVersionBlock;
 
